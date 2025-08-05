@@ -7,10 +7,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 load_dotenv()
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    st.error("Google API key is not set in the environment variables.")
-else:
-    st.success("Google API key is successfully loaded.")
+
    
 
 # ISSUE FIXED: Added {transcript} placeholder for proper string formatting
