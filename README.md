@@ -20,17 +20,20 @@ A Streamlit web application that converts YouTube video transcripts into detaile
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd "New folder"
 ```
 
 2. Install required packages:
+
 ```bash
 pip install streamlit python-dotenv langchain-google-genai youtube-transcript-api
 ```
 
 3. Create a `.env` file in the project root:
+
 ```env
 GOOGLE_API_KEY=your_google_api_key_here
 ```
@@ -46,6 +49,7 @@ GOOGLE_API_KEY=your_google_api_key_here
 ### Environment Variables
 
 Create a `.env` file with the following structure:
+
 ```env
 GOOGLE_API_KEY=your_actual_api_key_here
 ```
@@ -53,6 +57,7 @@ GOOGLE_API_KEY=your_actual_api_key_here
 ## Usage
 
 1. Run the Streamlit application:
+
 ```bash
 streamlit run app.py
 ```
@@ -85,16 +90,19 @@ New folder/
 ## Features in Detail
 
 ### Transcript Extraction
+
 - Supports YouTube videos with available captions/subtitles
 - Automatic video ID extraction from YouTube URLs
 - Error handling for videos without transcripts
 
 ### AI Summarization
+
 - Uses Google's Gemini 1.5 Flash model
 - Generates concise summaries (270 words or less)
 - Maintains context and key information
 
 ### Interactive Q&A
+
 - Ask questions about the generated notes
 - Persistent session state across interactions
 - Context-aware responses based on the summary
@@ -102,6 +110,7 @@ New folder/
 ## Error Handling
 
 The application includes comprehensive error handling for:
+
 - Missing API keys
 - Invalid YouTube URLs
 - Videos without available transcripts
@@ -139,6 +148,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 If you encounter any issues or have questions, please:
+
 1. Check the error messages in the application
 2. Ensure your API key is correctly set
 3. Verify the YouTube video has captions available
