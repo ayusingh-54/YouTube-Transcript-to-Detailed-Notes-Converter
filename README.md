@@ -29,10 +29,10 @@ cd "New folder"
 2. Install required packages:
 
 ```bash
-pip install streamlit python-dotenv langchain-google-genai youtube-transcript-api
+pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the project root:
+3. Create a `.env` file in the project root (for local development):
 
 ```env
 GOOGLE_API_KEY=your_google_api_key_here
@@ -44,17 +44,24 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
-3. Copy the key and add it to your `.env` file
+3. For local development: Copy the key and add it to your `.env` file
+4. For Streamlit Cloud: Add it as a secret in your app settings
 
 ### Environment Variables
 
-Create a `.env` file with the following structure:
+**Local Development:**
+Create a `.env` file with:
 
 ```env
 GOOGLE_API_KEY=your_actual_api_key_here
 ```
 
+**Streamlit Cloud Deployment:**
+Add `GOOGLE_API_KEY` in the app's secrets management section.
+
 ## Usage
+
+### Local Development
 
 1. Run the Streamlit application:
 
@@ -64,20 +71,27 @@ streamlit run app.py
 
 2. Open your web browser and navigate to the displayed URL (usually `http://localhost:8501`)
 
-3. Enter a YouTube video URL in the input field
+### Streamlit Cloud Deployment
 
-4. Click "Get Detailed Notes" to generate AI-powered summary
+1. Push your code to GitHub
+2. Deploy on [Streamlit Cloud](https://streamlit.io/cloud)
+3. Add your `GOOGLE_API_KEY` in the app secrets
+4. Your app will be available at the provided URL
 
-5. Use the Q&A section to ask questions about the generated notes
+5. Enter a YouTube video URL in the input field
+
+6. Click "Get Detailed Notes" to generate AI-powered summary
+
+7. Use the Q&A section to ask questions about the generated notes
 
 ## Project Structure
 
 ```
 New folder/
 ├── app.py              # Main Streamlit application
-├── .env               # Environment variables (create this)
-├── README.md          # Project documentation
-└── requirements.txt   # Python dependencies (optional)
+├── requirements.txt    # Python dependencies
+├── .env               # Environment variables (local only)
+└── README.md          # Project documentation
 ```
 
 ## Dependencies
@@ -86,6 +100,15 @@ New folder/
 - `python-dotenv`: Environment variable management
 - `langchain-google-genai`: Google Generative AI integration
 - `youtube-transcript-api`: YouTube transcript extraction
+
+## Deployment on Streamlit Cloud
+
+1. Push your repository to GitHub
+2. Go to [Streamlit Cloud](https://streamlit.io/cloud)
+3. Connect your GitHub repository
+4. Set the main file path to `app.py`
+5. Add your `GOOGLE_API_KEY` in the app secrets section
+6. Deploy the app
 
 ## Features in Detail
 
@@ -150,7 +173,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If you encounter any issues or have questions, please:
 
 1. Check the error messages in the application
-2. Ensure your API key is correctly set
+2. Ensure your API key is correctly set in Streamlit Cloud secrets
 3. Verify the YouTube video has captions available
 4. Create an issue in the repository
 

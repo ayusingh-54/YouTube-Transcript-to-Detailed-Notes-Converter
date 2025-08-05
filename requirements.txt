@@ -1,3 +1,9 @@
+# Streamlit
+streamlit
+
+# Environment Variable Management
+python-dotenv
+
 # LangChain Core
 langchain
 langchain-core
@@ -18,9 +24,9 @@ langchain-huggingface
 transformers
 huggingface-hub
 
-# Environment Variable Management
-python-dotenv
-
 # Machine Learning Utilities
 numpy
 scikit-learn
+
+# YouTube Transcript API
+youtube-transcript-api
